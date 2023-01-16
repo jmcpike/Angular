@@ -1,0 +1,59 @@
+
+    <style type="text/css">
+        .style1
+        {
+            text-align: left;
+            font-family: "Times New Roman";
+            font-size: 20px;
+            height: auto;
+            width: 219px;
+            color: #000000;
+        }
+    </style>
+   
+
+
+<!-- <form id="form1"   runat="server" defaultfocus= "txtUserName"> -->
+<div>
+<h1> Log Into Web Site</h1>
+<form [formGroup]="loginForm">
+
+
+<table>
+<tr>
+<td class="tdcol1">
+Username:
+</td>
+<td class= "tdcol2">
+   <input type="text" id="txtUserName" formControlName="userName">
+<!-- <asp:TextBox ID="txtUserName" runat="server"/> -->
+</td>
+<td class ="style1">
+<!-- <asp:RequiredFieldValidator ID="rfvUser" ErrorMessage="Please enter Username" ControlToValidate="txtUserName" runat="server" /> -->
+</td>
+</tr>
+<tr>
+<td class="tdcol1">
+Password:
+</td>
+<td class="tdcol2">
+    <input type="text" id="txtPassword" formControlName="password">
+<!-- <asp:TextBox ID="txtPWD" runat="server" TextMode="Password"/> -->
+</td>
+<td  class ="style1">
+<!-- <asp:RequiredFieldValidator ID="rfvPWD" runat="server" ControlToValidate="txtPWD" ErrorMessage="Please enter Password"/> -->
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td class="style1">
+    <button id="btnSubmit" (click)="login()"> Submit</button>
+<!-- <asp:Button ID="btnSubmit" runat="server" Text="Submit" onclick="btnSubmit_Click" /> -->
+</td>
+</tr>
+</table>
+</form>
+</div>
+
+
