@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import {
- FormControl,
+ UntypedFormControl,
  Validators,
-  FormBuilder
+  UntypedFormBuilder
 } from '@angular/forms';
 import { loginGet } from '../Models/login';
 import { ApiService } from '../service/api/api.service';
@@ -16,11 +16,11 @@ import { ApiService } from '../service/api/api.service';
 export class LoginComponent implements OnInit {
 loginForm = this.fb.group({
  
-   userName: new FormControl('', Validators.required),
-  password: new FormControl('', Validators.required)
+   userName: new UntypedFormControl('', Validators.required),
+  password: new UntypedFormControl('', Validators.required)
   
   })
-  constructor( private fb: FormBuilder, private api:ApiService) { }
+  constructor( private fb: UntypedFormBuilder, private api:ApiService) { }
 
   ngOnInit(): void {
   }
