@@ -6,6 +6,7 @@ import {
   FormBuilder
 } from '@angular/forms';
 import { loginGet } from '../Models/login';
+import { ApiService } from '../service/api/api.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ loginForm = this.fb.group({
   password: new FormControl('', Validators.required)
   
   })
-  constructor( private fb: FormBuilder) { }
+  constructor( private fb: FormBuilder, private api:ApiService) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +28,10 @@ loginForm = this.fb.group({
   login(){
    if( this.loginForm.valid){
     console.log(this.loginForm.value)
+    this.api.getAuthentication(this.loginForm.value.userName,this.loginForm.value.password)
+    .subscribe((loginData)=>{
+      console.log(loginData)
+    });
    }
     else{
       console.log('error')
